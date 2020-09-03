@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+
+</head>
+<body>
+<div id="div1">The text above has been created dynamically.</div>
+<h1 id="pick-me">Greetings To <span>All</span>!</h1>
+<p class="text_content"><span>This is a test</span></p>
+<div id="testDiv">
+<button onclick="delElement()" class="myBtn" >Click me</button>
+</div>
+</body>
+
+<script>
+    document.body.onload = addElement;
+
+    function addElement(){
+        const test = document.getElementsByClassName("myBtn")[0];
+        const newText = document.createTextNode("This is a test");
+
+        test.insertAdjacentText("afterbegin", "this is a test ");
+
+    };
+
+
+    function delElement(){
+        const test = document.getElementById("testDiv");
+        const firstTest = test.firstElementChild;
+        test.removeChild(firstTest);
+    }
+
+</script>
+
+</html>
